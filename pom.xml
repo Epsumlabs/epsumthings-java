@@ -12,4 +12,11 @@
     </properties>
     <name>EpsumThings Java SDK</name>
     <description>EpsumThings Java SDK for developers and hobbyists alike for using EpsumThings IoT platform</description>
+	<distributionManagement>
+                <repository>
+                <id>bintray-epsumlabs-EpsumLabsJavaSdk</id>
+                <name>epsumlabs-EpsumLabsJavaSdk</name>
+                <url>https://api.bintray.com/maven/epsumlabs/EpsumLabsJavaSdk/com.epsumlabs.epsumthingsjavasdk/;publish=1</url>
+                </repository>
+</distributionManagement>
 </project>
