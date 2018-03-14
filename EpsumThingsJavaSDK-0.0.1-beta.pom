@@ -5,14 +5,6 @@
     <artifactId>EpsumThingsJavaSDK</artifactId>
     <version>0.0.1-beta</version>
     <packaging>jar</packaging>
-    <dependencies>
-        <dependency>
-        <groupId>com.epsumlabs</groupId>
-        <artifactId>EpsumThingsJavaSDK</artifactId>
-        <version>0.0.1-beta</version>
-        <type>jar</type>
-</dependency>
-    </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>

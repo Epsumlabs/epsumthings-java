@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.epsumlabs.epsumthingsjavasdk;
 
 import java.util.HashMap;
@@ -25,7 +20,7 @@ public class EpsumThings {
      * This function is used to Display EpsumThings Profile
      *
      * @param user object of the Account class
-     * @return the HashMap of the user profile details
+     * @return the HashMap of the response
      * 
      * 
      * @throws java.net.MalformedURLException
@@ -66,7 +61,7 @@ public class EpsumThings {
      * @throws org.json.simple.parser.ParseException
      * @throws IOException
      * 
-     * @return HashMap of the request
+     * @return HashMap of the response
      */
     public static HashMap updateProfile(Account user, String fields, HashMap parameter) throws IOException, MalformedURLException, ParseException {
         URL url = new URL(BaseUrl + "/world/user/updateprofile?app_id=" + user.getAppId() + "&fields=" + fields);
@@ -98,7 +93,7 @@ public class EpsumThings {
      * @param user object of the Account class
      * @param configure HashMap of the configure user example:- {"homes":"test"}
      * 
-     * @return HashMap of the request
+     * @return HashMap of the response
      * 
      * @throws java.net.MalformedURLException
      * @throws org.json.simple.parser.ParseException
@@ -133,7 +128,7 @@ public class EpsumThings {
      *
      * @param user object of the Account class
      * 
-     * @return HashMap of the request
+     * @return HashMap of the response
      * 
      * @throws java.net.MalformedURLException
      * @throws org.json.simple.parser.ParseException
@@ -159,13 +154,13 @@ public class EpsumThings {
     }*/
 
     /**
-     * This is used to get user configuration 
+     * This is used to configure things
      *
      * @param user object of the Account class
      * @param configure store the HashMap of the Thing Configuration
      * example:-{"thingid": "string","thingname": "string"}
      * 
-     * @return HashMap of the request
+     * @return HashMap of the response
      * 
      * @throws java.net.MalformedURLException
      * @throws org.json.simple.parser.ParseException
@@ -201,7 +196,7 @@ public class EpsumThings {
      * @param user object of the Account class
      * @param newpassword store the New Password
      * 
-     * @return HashMap of the request
+     * @return HashMap of the response
      * 
      * @throws java.net.MalformedURLException
      * @throws org.json.simple.parser.ParseException
@@ -238,7 +233,7 @@ public class EpsumThings {
      *
      * @param email stores the user email
      * 
-     * @return HashMap of the request
+     * @return HashMap of the response
      * 
      * @throws java.net.MalformedURLException
      * @throws org.json.simple.parser.ParseException
@@ -276,7 +271,7 @@ public class EpsumThings {
      * @param token stores the token
      * @param newpassword stores the new password
      * 
-     * @return HashMap of the request
+     * @return HashMap of the response
      * 
      * @throws java.net.MalformedURLException
      * @throws org.json.simple.parser.ParseException
@@ -316,7 +311,7 @@ public class EpsumThings {
      *
      * @param user object of the Account Class
      * 
-     * @return HashMap of the request
+     * @return HashMap of the response
      * 
      * @throws java.net.MalformedURLException
      * @throws org.json.simple.parser.ParseException
@@ -348,7 +343,7 @@ public class EpsumThings {
      * @param thingid stores the thing id
      * @param control stores the HashMap of the thing configuration
      * 
-     * @return HashMap of the request
+     * @return HashMap of the response
      * 
      * @throws java.net.MalformedURLException
      * @throws org.json.simple.parser.ParseException
@@ -361,9 +356,7 @@ public class EpsumThings {
         con.setRequestProperty("Authorization", user.getUserName() + ";" + user.getAccessToken());
         con.setDoOutput(true);
         OutputStream os = con.getOutputStream();
-        String s="{\"config\":[{\"name\":\"pin1\", \"type\":\"analog\", \"desc\":\"sensor\"}], \"thingid\":\"EP0008\"}";
-        System.out.print(s);
-        os.write(s.getBytes());
+        os.write(control.toString().getBytes());
         os.flush();
         os.close();
         int responseCode = con.getResponseCode();
@@ -386,7 +379,7 @@ public class EpsumThings {
      * @param user object of the Account Class
      * @param thingid stores the thing id
      * 
-     * @return HashMap of the request
+     * @return HashMap of the response
      * 
      * @throws java.net.MalformedURLException
      * @throws org.json.simple.parser.ParseException
